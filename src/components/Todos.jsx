@@ -1,10 +1,15 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { removeTodo } from '../features/todo/todoSlice'
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import {removeTodo} from "../features/todo/todoSlice"
+
+
 
 function Todos() {
-    const todos = useSelector(state => state.todos)
-    const dispatch  = useDispatch()
+    const todos = useSelector(state=>state.Todos)
+    const dispach = useDispatch()
+
+
+    
 
     return (
         <>
@@ -17,7 +22,7 @@ function Todos() {
                     >
                         <div className='text-white'>{todo.text}</div>
                         <button
-                            onClick={() => dispatch (removeTodo(todo.id))}
+                            onClick={()=>dispach(removeTodo(todo.id))}
                             className="text-white bg-red-500 border-0 py-1 px-4 focus:outline-none hover:bg-red-600 rounded text-md"
                         >
                             <svg
